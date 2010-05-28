@@ -1,6 +1,8 @@
 = Setup Instructions =
 
-  # Download the Google Chrome to Phone Extension application to your Android device from http://code.google.com/p/chrometophone/downloads (make sure Settings->Applications->Unknown Sources is checked). Note that this application requires Android 2.2 ("Froyo") or later.
+* Note that this application requires Android 2.2 ("Froyo") or later. *
+
+  # Download the Google Chrome to Phone Extension application to your Android device from http://code.google.com/p/chrometophone/downloads (make sure Settings->Applications->Unknown Sources is checked). 
   # Start the Google Chrome to Phone Extension application on the phone.
   # Choose the account to register with (this must match the account you sign in to with Google Chrome to Phone Extension on the desktop).
   # Click on "Register Device" to register your phone with the Google Chrome to Phone Extension service.
