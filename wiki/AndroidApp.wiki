@@ -1,11 +1,6 @@
-#summary Android Application install
-
 = Android Application =
 
 After installing the extension in your desktop browser you have to install the Apk in your Android phone.
-
-
-= Details =
 
 *Note that this application requires Android 2.2 ("Froyo") or later. *
 
