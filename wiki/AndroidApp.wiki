@@ -4,7 +4,7 @@ After installing the extension in your desktop browser you have to install the A
 
 *Note that this application requires Android 2.2 ("Froyo") or later. *
 
-[http://code.google.com/p/chrometophone/downloads/detail?name=chrometophone-android-v1.6.apk&can=2 Download the apk] to your phone and then follow the [http://code.google.com/p/chrometophone/wiki/SetupInstructions setup instructions].
+[http://code.google.com/p/chrometophone/downloads/detail?name=chrometophone-android-v1.7.apk&can=2 Download the apk] to your phone and then follow the [http://code.google.com/p/chrometophone/wiki/SetupInstructions setup instructions].
 
 
-[http://chrometophone.googlecode.com/files/chrometophone-android-v1.6.apk http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://chrometophone.googlecode.com/files/chrometophone-android-v1.6.apk&chld=L|1&choe=UTF-8&foo=.png]
+[http://chrometophone.googlecode.com/files/chrometophone-android-v1.7.apk http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://chrometophone.googlecode.com/files/chrometophone-android-v1.7.apk&chld=L|1&choe=UTF-8&foo=.png]
