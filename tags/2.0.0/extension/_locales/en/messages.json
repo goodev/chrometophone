@@ -1,0 +1,62 @@
+{
+  "app_name": {
+    "message": "Google Chrome to Phone Extension",
+    "description": "Name of the application"
+  },
+  "app_desc": {
+    "message": "Google Chrome to Phone Extension enables you to send links and other information from Chrome to your Android device.",
+    "description": "Description of the application."
+  },
+  "sending_message": {
+    "message": "Sending to phone...",
+    "description": "Notice when link is being sent to phone."
+  },
+  "sent_message": {
+    "message": "Sent to phone.",
+    "description": "Notice when link has been successfully sent to phone."
+  },
+  "error_sending_message": {
+    "message": "Error sending to phone: $details$",
+    "description": "Notice when link cannot be sent.",
+    "placeholders": {
+      "details": {
+        "content": "$1",
+        "example": "Failed to send message."
+      }
+    }
+  },
+  "sign_in_required_message": {
+    "message": "Please $link$ to Chrome to Phone.</a>",
+    "description": "Notice when sign in is required.",
+    "placeholders": {
+      "link": {
+        "content": "$1",
+        "example": "Sign in link."
+      }
+    }
+  },
+  "sign_in_message": {
+    "message": "sign in",
+    "description": "Sign in phrase used in sign_in_required_message."
+  },
+  "sign_out_message": {
+    "message": "Sign out",
+    "description": "Sign out link message."
+  }, 
+  "invalid_scheme_message": {
+    "message": "Only http or https pages supported.",
+    "description": "Notice when user attempt to send a file link."
+  },
+  "help_message": {
+    "message": "Help",
+    "description": "The help message."
+  },
+  "connectivity_error_message": {
+    "message": "Connection error.",
+    "description": "Error message when there is a connection error with the server."
+  },
+  "device_not_registered_message": {
+    "message": "Device not registered for user.",
+    "description": "Error message when we can't match a user to a device."
+  }
+}
