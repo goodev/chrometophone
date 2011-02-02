@@ -1,0 +1,93 @@
+<!--
+    Copyright 2010 Google Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<style type="text/css">
+body {
+  padding: 0px;
+  margin: 1px;
+  min-width: 320px;
+  overflow: hidden;
+  background-image: -webkit-gradient(radial, 50% 10%, 10, 50% 10%, 400, from(#f1f8eb), to(#FFF));
+}
+
+td {
+  font-family: verdana;
+  font-size: 12px;
+  color: black;
+}
+</style>
+
+<script>
+function loadHandler() {
+  var request = chrome.extension.getBackgroundPage().lastRequest;
+  if (!request) {
+    window.close();
+  }
+  var domain = request.url.match(/:\/\/(.[^/]+)/)[1];
+  document.getElementById('msg').innerHTML = chrome.i18n.getMessage('request_message', domain);
+  document.getElementById('deny').innerHTML = chrome.i18n.getMessage('request_deny_message');
+  document.getElementById('allow').innerHTML = chrome.i18n.getMessage('request_allow_message');
+  document.getElementById('approve').innerHTML = chrome.i18n.getMessage('request_approve_message');
+  document.getElementById('content').innerText = request.selection;
+  document.getElementById('allow').addEventListener("click", function () {
+    chrome.extension.getBackgroundPage().onClickHandler(request, null);
+    window.close();
+  });
+  document.getElementById('approve').addEventListener("click", function () {
+    chrome.extension.getBackgroundPage().addToWhitelist(domain);
+    chrome.extension.getBackgroundPage().onClickHandler(request, null);
+    window.close();
+  });
+}
+
+function sendToPhoneListener(status) {
+  if (status == STATUS_SUCCESS) {
+    document.getElementById('msg').innerHTML = chrome.i18n.getMessage('sent_message');
+    activateSignOutLink();  
+  } else if (status == STATUS_LOGIN_REQUIRED) {
+    var link = '<a href="#" onclick="chrome.tabs.create({url: \'' + signInUrl + '\'})">' +
+        chrome.i18n.getMessage('sign_in_message') + '</a>';
+    document.getElementById('msg').innerHTML =
+        chrome.i18n.getMessage('sign_in_required_message', link);
+    setSignOutVisibility(false);
+  } else if (status == STATUS_DEVICE_NOT_REGISTERED) {
+    document.getElementById('msg').innerHTML = chrome.i18n.getMessage('device_not_registered_message');
+    activateSignOutLink();
+  } else { 
+    document.getElementById('msg').innerHTML =  
+        chrome.i18n.getMessage('error_sending_message', req.responseText);
+    activateSignOutLink();
+  }
+}
+
+</script>
+
+<body onload="loadHandler()">
+<table>
+  <tr>
+    <td><img src="icon_48.png" style="margin-right: 4px;"/></td>
+    <td width="100%" valign="middle">
+      <div id="msg"></div>
+      <div id="content"></div>
+      <p>
+        <button id="deny" onclick="window.close();"></button>
+        <button id="allow"></button>
+        <button id="approve"></button>
+      </p>
+    </td>
+  </tr>
+</table> 
+</body>
